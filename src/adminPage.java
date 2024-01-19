@@ -73,7 +73,17 @@ public class adminPage extends JFrame {
 		
 		JLabel lblNewLabe_4 = new JLabel();
 		lblNewLabe_4.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\ustp.JPG"));
-		lblNewLabe_4.setBounds(0, 55, 500, 300);
+		lblNewLabe_4.setBounds(0, 55, 900, 300);
 		contentPane.add(lblNewLabe_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
+		lblNewLabel_5.setBounds(900, -200, 900, 1200);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("New label");
+		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
+		lblNewLabel_6.setBounds(900, -500, 900, 1000);
+		contentPane.add(lblNewLabel_6);
     }
 }

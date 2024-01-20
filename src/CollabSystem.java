@@ -57,8 +57,8 @@ public class CollabSystem extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./src/Images/logoCropped.JPG"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Student Information System");
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setResizable(false);
+		setSize(1300, 730);
 		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));

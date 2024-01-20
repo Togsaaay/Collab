@@ -63,7 +63,7 @@ public class addStudentForm extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\logoCropped.JPG"));
+		lblNewLabel_1.setIcon(new ImageIcon("./src/Images/logoCropped.JPG"));
 		lblNewLabel_1.setBounds(0, 0, 67, 57);
 		contentPane.add(lblNewLabel_1);
 		
@@ -74,7 +74,7 @@ public class addStudentForm extends JFrame {
 		contentPane.add(lblNewLabel_3);
         
         JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\bluecrop.JPG"));
+		lblNewLabel.setIcon(new ImageIcon("./src/Images/bluecrop.JPG"));
 		lblNewLabel.setBounds(0, 0, 2000, 57);
 		contentPane.add(lblNewLabel);
 		
@@ -113,7 +113,7 @@ public class addStudentForm extends JFrame {
 		contentPane.add(middlenameField);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
+		lblNewLabel_5.setIcon(new ImageIcon("./src/Images/orangeCropped.JPG"));
 		lblNewLabel_5.setBounds(920, 0, 250, 340);
 		contentPane.add(lblNewLabel_5);
 		

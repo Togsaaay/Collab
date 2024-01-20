@@ -56,7 +56,7 @@ public class adminPage extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\logoCropped.JPG"));
+		lblNewLabel_1.setIcon(new ImageIcon("./src/Images/logoCropped.JPG"));
 		lblNewLabel_1.setBounds(0, 0, 67, 57);
 		contentPane.add(lblNewLabel_1);
 		
@@ -67,27 +67,27 @@ public class adminPage extends JFrame {
 		contentPane.add(lblNewLabel_3);
         
         JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\bluecrop.JPG"));
+		lblNewLabel.setIcon(new ImageIcon("./src/Images/bluecrop.JPG"));
 		lblNewLabel.setBounds(0, 0, 2000, 57);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabe_4 = new JLabel();
-		lblNewLabe_4.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\ustp.JPG"));
+		lblNewLabe_4.setIcon(new ImageIcon("./src/Images/ustp.JPG"));
 		lblNewLabe_4.setBounds(0, 55, 900, 300);
 		contentPane.add(lblNewLabe_4);
 		
 		JLabel lblNewLabel_7 = new JLabel();
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\USTPortal.JPG"));
+		lblNewLabel_7.setIcon(new ImageIcon("./src/Images/USTPortal.JPG"));
 		lblNewLabel_7.setBounds(980, 100, 450, 100);
 		contentPane.add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
+		lblNewLabel_5.setIcon(new ImageIcon("./src/Images/orangeCropped.JPG"));
 		lblNewLabel_5.setBounds(900, -200, 900, 1200);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
+		lblNewLabel_6.setIcon(new ImageIcon("./src/Images/orangeCropped.JPG"));
 		lblNewLabel_6.setBounds(900, -500, 900, 1000);
 		contentPane.add(lblNewLabel_6);
 		

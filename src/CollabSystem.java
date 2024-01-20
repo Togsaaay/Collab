@@ -1,6 +1,3 @@
-
-
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -57,7 +54,7 @@ public class CollabSystem extends JFrame {
 	 * Create the frame.
 	 */
 	public CollabSystem() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Janith\\eclipse-workspace\\Collab\\src\\Images\\logoCropped.JPG"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./src/Images/logoCropped.JPG"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Student Information System");
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -72,7 +69,7 @@ public class CollabSystem extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\logoCropped.JPG"));
+		lblNewLabel_1.setIcon(new ImageIcon("./src/Images/logoCropped.JPG"));
 		lblNewLabel_1.setBounds(0, 0, 67, 57);
 		contentPane.add(lblNewLabel_1);
 		
@@ -83,32 +80,32 @@ public class CollabSystem extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\bluecrop.JPG"));
+		lblNewLabel.setIcon(new ImageIcon("./src/Images/bluecrop.JPG"));
 		lblNewLabel.setBounds(66, 0, 757, 57);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\gated.JPG"));
+		lblNewLabel_2.setIcon(new ImageIcon("./src/Images/gated.JPG"));
 		lblNewLabel_2.setBounds(0, -57, 822, 764);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\origOrange.JPG"));
+		lblNewLabel_4.setIcon(new ImageIcon("./src/Images/origOrange.JPG"));
 		lblNewLabel_4.setBounds(800, 0, 500, 57);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\USTPortal.JPG"));
+		lblNewLabel_5.setIcon(new ImageIcon("./src/Images/USTPortal.JPG"));
 		lblNewLabel_5.setBounds(966, 100, 212, 95);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\humanIcon.JPG"));
+		lblNewLabel_6.setIcon(new ImageIcon("./src/Images/humanIcon.JPG"));
 		lblNewLabel_6.setBounds(910, 294, 31, 30);
 		contentPane.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_7 = new JLabel("");
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\lockIcon.JPG"));
+		lblNewLabel_7.setIcon(new ImageIcon("./src/Images/lockIcon.JPG"));
 		lblNewLabel_7.setBounds(910, 373, 31, 30);
 		contentPane.add(lblNewLabel_7);
 		

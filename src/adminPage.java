@@ -76,6 +76,11 @@ public class adminPage extends JFrame {
 		lblNewLabe_4.setBounds(0, 55, 900, 300);
 		contentPane.add(lblNewLabe_4);
 		
+		JLabel lblNewLabel_7 = new JLabel();
+		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\USTPortal.JPG"));
+		lblNewLabel_7.setBounds(980, 100, 450, 100);
+		contentPane.add(lblNewLabel_7);
+		
 		JLabel lblNewLabel_5 = new JLabel("New label");
 		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
 		lblNewLabel_5.setBounds(900, -200, 900, 1200);
@@ -85,5 +90,7 @@ public class adminPage extends JFrame {
 		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\johnr\\Desktop\\Collab\\src\\Images\\orangeCropped.JPG"));
 		lblNewLabel_6.setBounds(900, -500, 900, 1000);
 		contentPane.add(lblNewLabel_6);
+		
+		
     }
 }

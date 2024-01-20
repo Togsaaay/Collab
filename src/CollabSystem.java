@@ -17,8 +17,6 @@ import java.awt.SystemColor;
 import javax.swing.JPasswordField;
 import javax.swing.BorderFactory;
 import javax.swing.DropMode;
-import javax.swing.JLayeredPane;
-import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.border.LineBorder;
@@ -57,7 +55,7 @@ public class CollabSystem extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("./src/Images/logoCropped.JPG"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Student Information System");
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		setSize(1300, 730);
 		setResizable(false);
 		
 		contentPane = new JPanel();

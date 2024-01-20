@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -23,7 +25,7 @@ public class addStudentForm extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, placebirthLabel, civilStatusLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, countryLabel, regionLabel, cityLabel, barangayLabel;
+	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, bdateLabel, placebirthLabel, civilStatusLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, countryLabel, regionLabel, cityLabel, barangayLabel;
     private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, civilStatusField, nationalityField, religionField, homeField, zipcodeField, countryField, regionField, cityField, barangayField;
 
 	/**
@@ -124,6 +126,14 @@ public class addStudentForm extends JFrame {
 		ageField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
 		ageField.setFocusable(true);
 		contentPane.add(ageField);
+		
+		bdateLabel = new JLabel("Birth Date");
+		bdateLabel.setBounds(100, 550, 200, 50);
+		contentPane.add(bdateLabel);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(200, 550, 200, 40);
+		contentPane.add(dateChooser);
 		
 		placebirthLabel = new JLabel("Place of Birth");
 		placebirthLabel.setBounds(130, 180, 80, 25); 

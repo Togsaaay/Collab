@@ -127,13 +127,7 @@ public class addStudentForm extends JFrame {
 		ageField.setFocusable(true);
 		contentPane.add(ageField);
 		
-		bdateLabel = new JLabel("Birth Date");
-		bdateLabel.setBounds(100, 550, 200, 50);
-		contentPane.add(bdateLabel);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(200, 550, 200, 40);
-		contentPane.add(dateChooser);
 		
 		placebirthLabel = new JLabel("Place of Birth");
 		placebirthLabel.setBounds(130, 180, 80, 25); 

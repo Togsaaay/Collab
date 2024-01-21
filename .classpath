@@ -9,5 +9,8 @@
 	<classpathentry kind="lib" path="C:/Users/Janith/Downloads/jcalendar-1.4/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Janith/Downloads/jcalendar-1.4/lib/jgoodies-common-1.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Janith/Downloads/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/johnr/Downloads/jcalendar-1.4/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/johnr/Downloads/jcalendar-1.4/lib/jgoodies-common-1.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/johnr/Downloads/mysql-connector-j-8.2.0-20240121T062410Z-001/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

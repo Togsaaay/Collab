@@ -128,30 +128,30 @@ public class addStudentForm extends JFrame {
 		contentPane.add(ageField);
 		
 		bdateLabel = new JLabel("Birth Date");
-		bdateLabel.setBounds(100, 550, 200, 50);
+		bdateLabel.setBounds(130, 170, 200, 50);
 		contentPane.add(bdateLabel);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(200, 550, 200, 40);
+		dateChooser.setBounds(130, 210, 200, 40);
 		contentPane.add(dateChooser);
 		
 		placebirthLabel = new JLabel("Place of Birth");
-		placebirthLabel.setBounds(130, 180, 80, 25); 
+		placebirthLabel.setBounds(340, 180, 80, 25); 
 		contentPane.add(placebirthLabel);
 
 		placebirthField = new JTextField();
-		placebirthField.setBounds(130, 210, 250, 40);
+		placebirthField.setBounds(340, 210, 250, 40);
 		placebirthField.setOpaque(true); 
 		placebirthField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		placebirthField.setFocusable(true);
 		contentPane.add(placebirthField);
 		
 		civilStatusLabel = new JLabel("Civil Status");
-		civilStatusLabel.setBounds(400, 180, 80, 25); 
+		civilStatusLabel.setBounds(600, 180, 80, 25); 
 		contentPane.add	(civilStatusLabel);
 
 		civilStatusField = new JTextField();
-		civilStatusField.setBounds(400, 210, 250, 40);
+		civilStatusField.setBounds(600, 210, 220, 40);
 		civilStatusField.setOpaque(true); 
 		civilStatusField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		civilStatusField.setFocusable(true);

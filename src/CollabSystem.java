@@ -149,12 +149,13 @@ public class CollabSystem extends JFrame {
                         preparedStatement.setString(1, username);
                         preparedStatement.setString(2, password);
                         
-                        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                         try (ResultSet resultSet = preparedStatement.executeQuery()) {
                         	
                         	if (resultSet.next()) {
                                 int role_id = resultSet.getInt("role_id");
                                 
                                 if (role_id == 1) {
+                                	JOptionPane.showMessageDialog(null, "Admin Login Successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
                                     adminPage adminPage = new adminPage();
                                     adminPage.setVisible(true);
                                     dispose();
@@ -167,7 +168,7 @@ public class CollabSystem extends JFrame {
                                 
                             } else {
                                 System.out.println("Authentication failed");
-                                JOptionPane.showMessageDialog(null, "Login failed. Please check your credentials.");
+                                JOptionPane.showMessageDialog(null, "Invalid Credentials! Please check your email and password.", "Error!", JOptionPane.ERROR_MESSAGE);
                             }
                         }
                     }

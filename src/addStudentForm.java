@@ -13,6 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JComboBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,9 +26,18 @@ public class addStudentForm extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, bdateLabel, placebirthLabel, civilStatusLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, countryLabel, regionLabel, cityLabel, barangayLabel;
-    private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, civilStatusField, nationalityField, religionField, homeField, zipcodeField, countryField, regionField, cityField, barangayField;
+	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, bdateLabel, yearLabel, placebirthLabel, emailLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, programLabel, regionLabel, cityLabel, barangayLabel, contactLabel;
+    private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, emailField, nationalityField, religionField, homeField, zipcodeField, programField, regionField, cityField, barangayField, contactField;
+    private JLabel genderLabel;
+    private JRadioButton maleRadioButton, femaleRadioButton;
+    private ButtonGroup genderGroup;
+    private JLabel statusLabel;
+    private JRadioButton regularRadioButton, irregularRadioButton;
+    private ButtonGroup statusGroup;
+    private JComboBox<Integer> programComboBox;
 
+    
+    
 	/**
 	 * Launch the application.
 	 */
@@ -112,7 +122,7 @@ public class addStudentForm extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
 		lblNewLabel_5.setIcon(new ImageIcon("./src/Images/orangeCropped.JPG"));
-		lblNewLabel_5.setBounds(900, 0, 250, 340);
+		lblNewLabel_5.setBounds(870, 0, 270, 340);
 		contentPane.add(lblNewLabel_5);
 		
 		
@@ -136,115 +146,147 @@ public class addStudentForm extends JFrame {
 		contentPane.add(dateChooser);
 		
 		placebirthLabel = new JLabel("Place of Birth");
-		placebirthLabel.setBounds(340, 180, 80, 25); 
+		placebirthLabel.setBounds(360, 180, 80, 25); 
 		contentPane.add(placebirthLabel);
 
 		placebirthField = new JTextField();
-		placebirthField.setBounds(340, 210, 250, 40);
+		placebirthField.setBounds(360, 210, 250, 40);
 		placebirthField.setOpaque(true); 
 		placebirthField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		placebirthField.setFocusable(true);
 		contentPane.add(placebirthField);
 		
-		civilStatusLabel = new JLabel("Civil Status");
-		civilStatusLabel.setBounds(600, 180, 80, 25); 
-		contentPane.add	(civilStatusLabel);
+		genderLabel = new JLabel("Gender");
+        genderLabel.setBounds(640, 180, 80, 25);
+        contentPane.add(genderLabel);
 
-		civilStatusField = new JTextField();
-		civilStatusField.setBounds(600, 210, 220, 40);
-		civilStatusField.setOpaque(true); 
-		civilStatusField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-		civilStatusField.setFocusable(true);
-		contentPane.add	(civilStatusField);
+        maleRadioButton = new JRadioButton("Male");
+        maleRadioButton.setBounds(640, 210, 80, 25);
+        contentPane.add(maleRadioButton);
+
+        femaleRadioButton = new JRadioButton("Female");
+        femaleRadioButton.setBounds(720, 210, 80, 25);
+        contentPane.add(femaleRadioButton);
+
+        genderGroup = new ButtonGroup();
+        genderGroup.add(maleRadioButton);
+        genderGroup.add(femaleRadioButton);
+
 		
 		nationalityLabel = new JLabel("Nationality");
 		nationalityLabel.setBounds(30, 270, 80, 25);
 		contentPane.add	(nationalityLabel);
 
 		nationalityField = new JTextField();
-		nationalityField.setBounds(30, 300, 390, 40); 
+		nationalityField.setBounds(30, 300, 250, 40); 
 		nationalityField.setOpaque(true); 
 		nationalityField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		nationalityField.setFocusable(true);
 		contentPane.add	(nationalityField);
 		
-		religionLabel = new JLabel("Religion");
-		religionLabel.setBounds(440, 270, 80, 25); 
-		contentPane.add	(religionLabel);
-
-		religionField = new JTextField();
-		religionField.setBounds(440, 300, 380, 40);
-		religionField.setOpaque(true); 
-		religionField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
-		religionField.setFocusable(true);
-		contentPane.add	(religionField);
 		
-		homeLabel = new JLabel("Home Address");
-		homeLabel.setBounds(30, 350, 200, 25); 
-		contentPane.add	(homeLabel);
+		
+		
+		contactLabel = new JLabel("Contact Number");
+		contactLabel.setBounds(300, 270, 200, 25); 
+		contentPane.add	(contactLabel);
 
-		homeField = new JTextField();
-		homeField.setBounds(30, 380, 790, 40); 
-		homeField.setOpaque(true);
-		homeField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-		homeField.setFocusable(true);
-		contentPane.add	(homeField);
+		contactField = new JTextField();
+		contactField.setBounds(300, 300, 250, 40);
+		contactField.setOpaque(true); 
+		contactField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
+		contactField.setFocusable(true);
+		contentPane.add(contactField);
+		
+		emailLabel = new JLabel("Email");
+		emailLabel.setBounds(570, 270, 80, 25); 
+		contentPane.add	(emailLabel);
+
+		emailField = new JTextField();
+		emailField.setBounds(570, 300, 250, 40);
+		emailField.setOpaque(true); 
+		emailField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
+		emailField.setFocusable(true);
+		contentPane.add	(emailField);
 		
 		zipcodeLabel = new JLabel("Zipcode");
-		zipcodeLabel.setBounds(900, 350, 80, 25); 
+		zipcodeLabel.setBounds(870, 370, 80, 25); 
 		contentPane.add(zipcodeLabel);
 		
 		zipcodeField = new JTextField();
-		zipcodeField.setBounds(900, 380, 250, 40); 
+		zipcodeField.setBounds(870, 400, 250, 40); 
 		zipcodeField.setOpaque(true);
 		zipcodeField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		zipcodeField.setFocusable(true);
 		contentPane.add(zipcodeField);
 		
-		countryLabel = new JLabel("Country");
-		countryLabel.setBounds(30, 420, 80, 25);
-		contentPane.add(countryLabel);
-		
-		countryField = new JTextField();
-		countryField.setBounds(30, 450, 250, 40);
-		countryField.setOpaque(true);
-		countryField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-		countryField.setFocusable(true);
-		contentPane.add(countryField);
-		
 		regionLabel = new JLabel("Province/Region");
-		regionLabel.setBounds(300, 420, 200, 25);
+		regionLabel.setBounds(30, 370, 200, 25);
 		contentPane.add(regionLabel);
 		
 		regionField = new JTextField();
-		regionField.setBounds(300, 450, 250, 40);
+		regionField.setBounds(30, 400, 250, 40);
 		regionField.setOpaque(true);
 		regionField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		regionField.setFocusable(true);
 		contentPane.add(regionField);
 		
 		cityLabel = new JLabel("City/Municipality");
-		cityLabel.setBounds(575, 420, 200, 25);
+		cityLabel.setBounds(300, 370, 200, 25);
 		contentPane.add(cityLabel);
 		
 		cityField = new JTextField();
-		cityField.setBounds(575, 450, 250, 40);
+		cityField.setBounds(300, 400, 250, 40);
 		cityField.setOpaque(true);
 		cityField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		cityField.setFocusable(true);
 		contentPane.add(cityField);
 		
 		barangayLabel = new JLabel("Barangay");
-		barangayLabel.setBounds(900, 420, 200, 25);
+		barangayLabel.setBounds(570, 370, 200, 25);
 		contentPane.add(barangayLabel);
 		
 		barangayField = new JTextField();
-		barangayField.setBounds(900, 450, 250, 40);
+		barangayField.setBounds(570, 400, 250, 40);
 		barangayField.setOpaque(true);
 		barangayField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		barangayField.setFocusable(true);
 		contentPane.add(barangayField);
 		
+		programLabel = new JLabel("Pogram");
+		programLabel.setBounds(30, 470, 200, 25);
+		contentPane.add(programLabel);
+		
+		programField = new JTextField();
+		programField.setBounds(30, 500, 250, 40);
+		programField.setOpaque(true);
+		programField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		programField.setFocusable(true);
+		contentPane.add(programField);
+		
+		yearLabel = new JLabel("Year Level");
+		yearLabel.setBounds(300, 470, 200, 25);
+		contentPane.add(yearLabel);
+		
+		programComboBox = new JComboBox<>(new Integer[]{1, 2, 3, 4});
+		programComboBox.setBounds(300, 500, 80, 40);
+		contentPane.add(programComboBox);
+		
+		statusLabel = new JLabel("Year Status");
+        statusLabel.setBounds(410, 470, 80, 25);
+        contentPane.add(statusLabel);
+
+        regularRadioButton = new JRadioButton("Regular");
+        regularRadioButton.setBounds(410, 510, 80, 25);
+        contentPane.add(regularRadioButton);
+
+        irregularRadioButton = new JRadioButton("Irregular");
+        irregularRadioButton.setBounds(500, 510, 80, 25);
+        contentPane.add(irregularRadioButton);
+
+        statusGroup = new ButtonGroup();
+        statusGroup.add(regularRadioButton);
+        statusGroup.add(irregularRadioButton);
 		
 		JButton myButton = new JButton("Register Student");
 		myButton.setBounds(950, 550, 200, 50);

@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.border.EmptyBorder;
+import java.awt.GraphicsEnvironment;
 
 public class adminPage extends JFrame {
 
@@ -38,14 +39,9 @@ public class adminPage extends JFrame {
     public adminPage() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Disable resizing
         setResizable(false);
 
-        // Get the screen size
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-        // Set the size of the window to full screen
-        setSize(screenSize.width, screenSize.height);
+        setSize(1200, 600);
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

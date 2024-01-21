@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JComboBox;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -23,9 +26,18 @@ public class addStudentForm extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, placebirthLabel, civilStatusLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, countryLabel, regionLabel, cityLabel, barangayLabel;
-    private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, civilStatusField, nationalityField, religionField, homeField, zipcodeField, countryField, regionField, cityField, barangayField;
 
+	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, bdateLabel, yearLabel, placebirthLabel, emailLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, programLabel, regionLabel, cityLabel, barangayLabel, contactLabel;
+    private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, emailField, nationalityField, religionField, homeField, zipcodeField, programField, regionField, cityField, barangayField, contactField;
+    private JLabel genderLabel;
+    private JRadioButton maleRadioButton, femaleRadioButton;
+    private ButtonGroup genderGroup;
+    private JLabel statusLabel;
+    private JRadioButton regularRadioButton, irregularRadioButton;
+    private ButtonGroup statusGroup;
+    private JComboBox<Integer> programComboBox;
+
+    
 	/**
 	 * Launch the application.
 	 */
@@ -49,12 +61,6 @@ public class addStudentForm extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setSize(1200, 700);
-
-        // Get the screen size
-        
-
-        // Set the size of the window to full screen
-
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -80,173 +86,227 @@ public class addStudentForm extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		lastnameLabel = new JLabel("Lastname");
-		lastnameLabel.setBounds(100, 100, 80, 25); // Set the bounds for the username label
+		lastnameLabel.setBounds(30, 100, 80, 25);
 		contentPane.add(lastnameLabel);
 
 		lastnameField = new JTextField();
-		lastnameField.setBounds(100, 125, 250, 40); // Set the bounds for the username text field
-		lastnameField.setOpaque(true); // Set the field to be opaque
-		lastnameField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		lastnameField.setFocusable(true);// Set the background color to gray
+		lastnameField.setBounds(30, 125, 250, 40);
+		lastnameField.setOpaque(true); 
+		lastnameField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		lastnameField.setFocusable(true);
 		contentPane.add(lastnameField);
 		
 		firstnameLabel = new JLabel("Firstname");
-		firstnameLabel.setBounds(370, 100, 80, 25); // Set the bounds for the username label
+		firstnameLabel.setBounds(300, 100, 80, 25);
 		contentPane.add(firstnameLabel);
 
 		firstnameField = new JTextField();
-		firstnameField.setBounds(370, 125, 250, 40); // Set the bounds for the username text field
-		firstnameField.setOpaque(true); // Set the field to be opaque
-		firstnameField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		firstnameField.setFocusable(true);// Set the background color to gray
+		firstnameField.setBounds(300, 125, 250, 40);
+		firstnameField.setOpaque(true);
+		firstnameField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		firstnameField.setFocusable(true);
 		contentPane.add(firstnameField);
 		
 		
 		middlenameLabel = new JLabel("Middle Name");
-		middlenameLabel.setBounds(640, 100, 80, 25); // Set the bounds for the username label
+		middlenameLabel.setBounds(570, 100, 80, 25);
 		contentPane.add(middlenameLabel);
 
 		middlenameField = new JTextField();
-		middlenameField.setBounds(640, 125, 250, 40); // Set the bounds for the username text field
-		middlenameField.setOpaque(true); // Set the field to be opaque
-		middlenameField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		middlenameField.setFocusable(true);// Set the background color to gray
+		middlenameField.setBounds(570, 125, 250, 40);
+		middlenameField.setOpaque(true); 
+		middlenameField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		middlenameField.setFocusable(true);
 		contentPane.add(middlenameField);
 		
 		JLabel lblNewLabel_5 = new JLabel("New label");
 		lblNewLabel_5.setIcon(new ImageIcon("./src/Images/orangeCropped.JPG"));
-		lblNewLabel_5.setBounds(920, 0, 250, 340);
+		lblNewLabel_5.setBounds(870, 0, 270, 340);
 		contentPane.add(lblNewLabel_5);
 		
 		
 		ageLabel = new JLabel("Age");
-		ageLabel.setBounds(100, 180, 80, 25); // Set the bounds for the username label
+		ageLabel.setBounds(30, 180, 80, 25);
 		contentPane.add(ageLabel);
 
 		ageField = new JTextField();
-		ageField.setBounds(100, 210, 80, 40); // Set the bounds for the username text field
-		ageField.setOpaque(true); // Set the field to be opaque
-		ageField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		ageField.setFocusable(true);// Set the background color to gray
+		ageField.setBounds(30, 210, 80, 40);
+		ageField.setOpaque(true); 
+		ageField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
+		ageField.setFocusable(true);
 		contentPane.add(ageField);
 		
+		bdateLabel = new JLabel("Birth Date");
+		bdateLabel.setBounds(130, 170, 200, 50);
+		contentPane.add(bdateLabel);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(130, 210, 200, 40);
+		contentPane.add(dateChooser);
+		
 		placebirthLabel = new JLabel("Place of Birth");
-		placebirthLabel.setBounds(200, 180, 80, 25); // Set the bounds for the username label
+		placebirthLabel.setBounds(360, 180, 80, 25); 
 		contentPane.add(placebirthLabel);
 
 		placebirthField = new JTextField();
-		placebirthField.setBounds(200, 210, 250, 40); // Set the bounds for the username text field
-		placebirthField.setOpaque(true); // Set the field to be opaque
-		placebirthField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
+		placebirthField.setBounds(360, 210, 250, 40);
+		placebirthField.setOpaque(true); 
+		placebirthField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		placebirthField.setFocusable(true);
 		contentPane.add(placebirthField);
 		
-		civilStatusLabel = new JLabel("Civil Status");
-		civilStatusLabel.setBounds(479, 180, 80, 25); // Set the bounds for the username label
-		contentPane.add	(civilStatusLabel);
+		genderLabel = new JLabel("Gender");
+        genderLabel.setBounds(400, 260, 80, 25);
+        contentPane.add(genderLabel);
 
-		civilStatusField = new JTextField();
-		civilStatusField.setBounds(470, 210, 250, 40); // Set the bounds for the username text field
-		civilStatusField.setOpaque(true); // Set the field to be opaque
-		civilStatusField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		civilStatusField.setFocusable(true);// Set the background color to gray
-		contentPane.add	(civilStatusField);
+        maleRadioButton = new JRadioButton("Male");
+        maleRadioButton.setBounds(400, 290, 80, 25);
+        contentPane.add(maleRadioButton);
+
+        femaleRadioButton = new JRadioButton("Female");
+        femaleRadioButton.setBounds(400, 290, 80, 25);
+        contentPane.add(femaleRadioButton);
+
+        genderGroup = new ButtonGroup();
+        genderGroup.add(maleRadioButton);
+        genderGroup.add(femaleRadioButton);
+
+        genderLabel.setBounds(640, 180, 80, 25);
+        contentPane.add(genderLabel);
+
+        maleRadioButton = new JRadioButton("Male");
+        maleRadioButton.setBounds(640, 210, 80, 25);
+        contentPane.add(maleRadioButton);
+
+        femaleRadioButton = new JRadioButton("Female");
+        femaleRadioButton.setBounds(720, 210, 80, 25);
+        contentPane.add(femaleRadioButton);
+
+        genderGroup = new ButtonGroup();
+        genderGroup.add(maleRadioButton);
+        genderGroup.add(femaleRadioButton);
+
 		
 		nationalityLabel = new JLabel("Nationality");
-		nationalityLabel.setBounds(100, 270, 80, 25); // Set the bounds for the username label
+		nationalityLabel.setBounds(30, 270, 80, 25);
 		contentPane.add	(nationalityLabel);
 
 		nationalityField = new JTextField();
-		nationalityField.setBounds(100, 300, 390, 40); // Set the bounds for the username text field
-		nationalityField.setOpaque(true); // Set the field to be opaque
-		nationalityField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		nationalityField.setFocusable(true);// Set the background color to gray
+		nationalityField.setBounds(30, 300, 250, 40); 
+		nationalityField.setOpaque(true); 
+		nationalityField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		nationalityField.setFocusable(true);
 		contentPane.add	(nationalityField);
 		
-		religionLabel = new JLabel("Religion");
-		religionLabel.setBounds(510, 270, 80, 25); // Set the bounds for the username label
-		contentPane.add	(religionLabel);
-
-		religionField = new JTextField();
-		religionField.setBounds(510, 300, 380, 40); // Set the bounds for the username text field
-		religionField.setOpaque(true); // Set the field to be opaque
-		religionField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		religionField.setFocusable(true);// Set the background color to gray
-		contentPane.add	(religionField);
 		
-		homeLabel = new JLabel("Home Address");
-		homeLabel.setBounds(100, 350, 200, 25); // Set the bounds for the username label
-		contentPane.add	(homeLabel);
+		
+		
+		contactLabel = new JLabel("Contact Number");
+		contactLabel.setBounds(300, 270, 200, 25); 
+		contentPane.add	(contactLabel);
 
-		homeField = new JTextField();
-		homeField.setBounds(100, 380, 790, 40); // Set the bounds for the username text field
-		homeField.setOpaque(true); // Set the field to be opaque
-		homeField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		homeField.setFocusable(true);// Set the background color to gray
-		contentPane.add	(homeField);
+		contactField = new JTextField();
+		contactField.setBounds(300, 300, 250, 40);
+		contactField.setOpaque(true); 
+		contactField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
+		contactField.setFocusable(true);
+		contentPane.add(contactField);
+		
+		emailLabel = new JLabel("Email");
+		emailLabel.setBounds(570, 270, 80, 25); 
+		contentPane.add	(emailLabel);
+
+		emailField = new JTextField();
+		emailField.setBounds(570, 300, 250, 40);
+		emailField.setOpaque(true); 
+		emailField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); 
+		emailField.setFocusable(true);
+		contentPane.add	(emailField);
 		
 		zipcodeLabel = new JLabel("Zipcode");
-		zipcodeLabel.setBounds(920, 350, 80, 25); // Set the bounds for the username label
+		zipcodeLabel.setBounds(870, 370, 80, 25); 
 		contentPane.add(zipcodeLabel);
 		
 		zipcodeField = new JTextField();
-		zipcodeField.setBounds(920, 380, 250, 40); // Set the bounds for the username text field
-		zipcodeField.setOpaque(true); // Set the field to be opaque
-		zipcodeField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		zipcodeField.setFocusable(true);// Set the background color to gray
+		zipcodeField.setBounds(870, 400, 250, 40); 
+		zipcodeField.setOpaque(true);
+		zipcodeField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		zipcodeField.setFocusable(true);
 		contentPane.add(zipcodeField);
 		
-		countryLabel = new JLabel("Country");
-		countryLabel.setBounds(100, 420, 80, 25); // Set the bounds for the username label
-		contentPane.add(countryLabel);
-		
-		countryField = new JTextField();
-		countryField.setBounds(100, 450, 250, 40); // Set the bounds for the username text field
-		countryField.setOpaque(true); // Set the field to be opaque
-		countryField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		countryField.setFocusable(true);// Set the background color to gray
-		contentPane.add(countryField);
-		
 		regionLabel = new JLabel("Province/Region");
-		regionLabel.setBounds(370, 420, 200, 25); // Set the bounds for the username label
+		regionLabel.setBounds(30, 370, 200, 25);
 		contentPane.add(regionLabel);
 		
 		regionField = new JTextField();
-		regionField.setBounds(370, 450, 250, 40); // Set the bounds for the username text field
-		regionField.setOpaque(true); // Set the field to be opaque
-		regionField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		regionField.setFocusable(true);// Set the background color to gray
+		regionField.setBounds(30, 400, 250, 40);
+		regionField.setOpaque(true);
+		regionField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		regionField.setFocusable(true);
 		contentPane.add(regionField);
 		
 		cityLabel = new JLabel("City/Municipality");
-		cityLabel.setBounds(640, 420, 200, 25); // Set the bounds for the username label
+		cityLabel.setBounds(300, 370, 200, 25);
 		contentPane.add(cityLabel);
 		
 		cityField = new JTextField();
-		cityField.setBounds(640, 450, 250, 40); // Set the bounds for the username text field
-		cityField.setOpaque(true); // Set the field to be opaque
-		cityField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		cityField.setFocusable(true);// Set the background color to gray
+		cityField.setBounds(300, 400, 250, 40);
+		cityField.setOpaque(true);
+		cityField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		cityField.setFocusable(true);
 		contentPane.add(cityField);
 		
 		barangayLabel = new JLabel("Barangay");
-		barangayLabel.setBounds(918, 420, 200, 25); // Set the bounds for the username label
+		barangayLabel.setBounds(570, 370, 200, 25);
 		contentPane.add(barangayLabel);
 		
 		barangayField = new JTextField();
-		barangayField.setBounds(918, 450, 250, 40); // Set the bounds for the username text field
-		barangayField.setOpaque(true); // Set the field to be opaque
-		barangayField.setCursor(new Cursor(Cursor.TEXT_CURSOR)); // Set cursor to text cursor
-		barangayField.setFocusable(true);// Set the background color to gray
+		barangayField.setBounds(570, 400, 250, 40);
+		barangayField.setOpaque(true);
+		barangayField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		barangayField.setFocusable(true);
 		contentPane.add(barangayField);
 		
+		programLabel = new JLabel("Pogram");
+		programLabel.setBounds(30, 470, 200, 25);
+		contentPane.add(programLabel);
+		
+		programField = new JTextField();
+		programField.setBounds(30, 500, 250, 40);
+		programField.setOpaque(true);
+		programField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
+		programField.setFocusable(true);
+		contentPane.add(programField);
+		
+		yearLabel = new JLabel("Year Level");
+		yearLabel.setBounds(300, 470, 200, 25);
+		contentPane.add(yearLabel);
+		
+		programComboBox = new JComboBox<>(new Integer[]{1, 2, 3, 4});
+		programComboBox.setBounds(300, 500, 80, 40);
+		contentPane.add(programComboBox);
+		
+		statusLabel = new JLabel("Year Status");
+        statusLabel.setBounds(410, 470, 80, 25);
+        contentPane.add(statusLabel);
+
+        regularRadioButton = new JRadioButton("Regular");
+        regularRadioButton.setBounds(410, 510, 80, 25);
+        contentPane.add(regularRadioButton);
+
+        irregularRadioButton = new JRadioButton("Irregular");
+        irregularRadioButton.setBounds(500, 510, 80, 25);
+        contentPane.add(irregularRadioButton);
+
+        statusGroup = new ButtonGroup();
+        statusGroup.add(regularRadioButton);
+        statusGroup.add(irregularRadioButton);
 		
 		JButton myButton = new JButton("Register Student");
-		myButton.setBounds(965, 550, 200, 50); // Set the bounds for the button
+		myButton.setBounds(950, 550, 200, 50);
 		contentPane.add(myButton);
 		
 		myButton.addActionListener(e -> {
-		    // Code to be executed when the button is clicked
 		    System.out.println("Button Clicked!");
 		});
 	}

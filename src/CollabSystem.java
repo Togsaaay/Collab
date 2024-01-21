@@ -5,23 +5,28 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JTextField;
 import java.awt.SystemColor;
 import javax.swing.JPasswordField;
 import javax.swing.BorderFactory;
 import javax.swing.DropMode;
-import javax.swing.JLayeredPane;
-import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.border.LineBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CollabSystem extends JFrame {
 
@@ -130,6 +135,49 @@ public class CollabSystem extends JFrame {
         addFocusListenerToPasswordField(passwordField, passwordDefaultText);
         
         JButton btnLogin = new JButton("Login");
+        btnLogin.addActionListener(new ActionListener() {
+        	
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		String username = txtUsername.getText();
+                String password = String.valueOf(passwordField.getPassword());
+
+                try (Connection connection = MyConnector.getConnection()) {
+                    String query = "SELECT role_id FROM login WHERE username = ? AND password = ?";
+                    
+                    try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                        preparedStatement.setString(1, username);
+                        preparedStatement.setString(2, password);
+                        
+                        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        	
+                        	if (resultSet.next()) {
+                                int role_id = resultSet.getInt("role_id");
+                                
+                                if (role_id == 1) {
+                                    adminPage adminPage = new adminPage();
+                                    adminPage.setVisible(true);
+                                    dispose();
+                                    
+                                } else if (role_id == 2) {
+                                	studentPage studentPage = new studentPage();
+                                    studentPage.setVisible(true);
+                                    dispose();
+                                }
+                                
+                            } else {
+                                System.out.println("Authentication failed");
+                                JOptionPane.showMessageDialog(null, "Login failed. Please check your credentials.");
+                            }
+                        }
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error connecting to the database. Please try again later.");
+                }
+            }
+        });
+
         btnLogin.setFont(new Font("Segoe UI Black", Font.BOLD, 25));
         btnLogin.setForeground(new Color(255, 165, 0));
         btnLogin.setBackground(new Color(0, 0, 139));

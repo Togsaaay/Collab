@@ -60,8 +60,7 @@ public class addStudentForm extends JFrame {
 	public addStudentForm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-
-        setSize(1200, 700);
+		setSize(1200, 700);
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

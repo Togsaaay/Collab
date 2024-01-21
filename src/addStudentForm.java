@@ -27,6 +27,11 @@ public class addStudentForm extends JFrame {
 	private JPanel contentPane;
 	private JLabel firstnameLabel, lastnameLabel, middlenameLabel, ageLabel, bdateLabel, placebirthLabel, civilStatusLabel, nationalityLabel, religionLabel, homeLabel, zipcodeLabel, countryLabel, regionLabel, cityLabel, barangayLabel;
     private JTextField firstnameField, lastnameField, middlenameField, ageField, placebirthField, civilStatusField, nationalityField, religionField, homeField, zipcodeField, countryField, regionField, cityField, barangayField;
+    private JLabel genderLabel;
+    private JRadioButton maleRadioButton, femaleRadioButton;
+    private ButtonGroup genderGroup;
+    
+    
 
 	/**
 	 * Launch the application.
@@ -127,29 +132,40 @@ public class addStudentForm extends JFrame {
 		ageField.setFocusable(true);
 		contentPane.add(ageField);
 		
+		bdateLabel = new JLabel("Birth Date");
+		bdateLabel.setBounds(130, 170, 200, 50);
+		contentPane.add(bdateLabel);
 		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(130, 210, 200, 40);
+		contentPane.add(dateChooser);
 		
 		placebirthLabel = new JLabel("Place of Birth");
-		placebirthLabel.setBounds(130, 180, 80, 25); 
+		placebirthLabel.setBounds(340, 180, 80, 25); 
 		contentPane.add(placebirthLabel);
 
 		placebirthField = new JTextField();
-		placebirthField.setBounds(130, 210, 250, 40);
+		placebirthField.setBounds(340, 210, 250, 40);
 		placebirthField.setOpaque(true); 
 		placebirthField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
 		placebirthField.setFocusable(true);
 		contentPane.add(placebirthField);
 		
-		civilStatusLabel = new JLabel("Civil Status");
-		civilStatusLabel.setBounds(400, 180, 80, 25); 
-		contentPane.add	(civilStatusLabel);
+		genderLabel = new JLabel("Gender");
+        genderLabel.setBounds(400, 260, 80, 25);
+        contentPane.add(genderLabel);
 
-		civilStatusField = new JTextField();
-		civilStatusField.setBounds(400, 210, 250, 40);
-		civilStatusField.setOpaque(true); 
-		civilStatusField.setCursor(new Cursor(Cursor.TEXT_CURSOR));
-		civilStatusField.setFocusable(true);
-		contentPane.add	(civilStatusField);
+        maleRadioButton = new JRadioButton("Male");
+        maleRadioButton.setBounds(400, 290, 80, 25);
+        contentPane.add(maleRadioButton);
+
+        femaleRadioButton = new JRadioButton("Female");
+        femaleRadioButton.setBounds(400, 290, 80, 25);
+        contentPane.add(femaleRadioButton);
+
+        genderGroup = new ButtonGroup();
+        genderGroup.add(maleRadioButton);
+        genderGroup.add(femaleRadioButton);
 		
 		nationalityLabel = new JLabel("Nationality");
 		nationalityLabel.setBounds(30, 270, 80, 25);
